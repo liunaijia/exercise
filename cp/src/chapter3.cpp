@@ -5,7 +5,7 @@
 #include <cstring>
 
 namespace chapter3 {
-void run341() {
+void ex341() {
 	std::cout << "[3.41]" << std::endl;
 	int array[]{11, 23, 54, 90, 3};
 	std::vector<int> items(std::begin(array), std::end(array));
@@ -14,7 +14,7 @@ void run341() {
 	std::cout << std::endl;
 }
 
-void run342() {
+void ex342() {
 	std::cout << "[3.42]" << std::endl;
 	const std::vector<int> items{11, 23, 54, 90, 3};
 	int array[items.size()];
@@ -25,7 +25,7 @@ void run342() {
 	std::cout << std::endl;
 }
 
-void run343() {
+void ex343() {
 	std::cout << "[3.43]" << std::endl;
 	int ia[3][4] = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 } };
 
@@ -54,7 +54,7 @@ void run343() {
 	}
 }
 
-void run344() {
+void ex344() {
 	std::cout << "[3.44]" << std::endl;
 	int ia[3][4] = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 } };
 
@@ -86,7 +86,7 @@ void run344() {
 	}
 }
 
-void run345() {
+void ex345() {
 	std::cout << "[3.45]" << std::endl;
 	int ia[3][4] = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 } };
 
@@ -115,7 +115,8 @@ void run345() {
 	}
 }
 
-void run339() {
+void ex339() {
+	std::cout << "[3.39]" << std::endl;
 	const std::string a("hello"), b("hello");
 	std::cout << (a < b) << (a == b) << (a > b) << std::endl;
 
@@ -124,13 +125,108 @@ void run339() {
 	std::cout << strcmp("java", "c++") << std::endl;
 }
 
+void ex340() {
+	std::cout << "[3.40]" << std::endl;
+	char a[] = "hello";
+	char b[] = " world";
+	char c[strlen(a) + strlen(b) + 1];
+	strcpy(c, a);
+	strcat(c, b);
+	std::cout << c << std::endl;
+}
+
+void ex334() {
+	std::cout << "[3.34]" << std::endl;
+	int array[]{0, 10, 20, 30, 40, 50};
+	auto *p1 = array + 1;
+	auto *p2 = std::end(array);
+	std::cout << "p1:" << *p1 << ", p2:" << *p2 << std::endl;
+	p1 += p2 - p1;
+	std::cout << "p1:" << *p1 << ", p2:" << *p2 << std::endl;
+	std::cout << std::endl;
+}
+
+void ex335() {
+	std::cout << "[3.35]" << std::endl;
+	int array[10];
+	for(auto *p = std::begin(array); p != std::end(array);p++)
+		*p = 0;
+	for(const auto i : array)
+		std::cout << i << " ";
+	std::cout << std::endl;
+}
+
+void ex336() {
+	std::cout << "[3.36]" << std::endl;
+	int a[]{1, 2, 3};
+	int b[]{1, 2, 3};
+
+	const auto *pa = std::begin(a), *pb = std::begin(b);
+	while(pa != std::end(a) && pb != std::end(b)){
+		if (*pa != *pb)
+			break;
+		pa++;
+		pb++;
+	}
+	if (pa == std::end(a) && pb == std::end(b))
+		std::cout << "arrays are equal." << std::endl;
+	else
+		std::cout << "arrays are NOT equal." << std::endl;
+
+	std::cout << (std::vector<int>(3, 1) == std::vector<int>(3, 1)) << std::endl;
+	std::cout << (std::vector<int>(2, 1) == std::vector<int>(3, 1)) << std::endl;
+}
+
+void ex331() {
+	std::cout << "[3.31]" << std::endl;
+	int array[10];
+	for(size_t i = 0; i < 10; i++)
+		array[i] = i;
+	for(const auto i : array)
+		std::cout << i << " ";
+	std::cout << std::endl;
+}
+
+void ex332() {
+	std::cout << "[3.32]" << std::endl;
+	int array1[10];
+	for(size_t i = 0; i < 10; i++)
+		array1[i] = i;
+
+	size_t size = std::end(array1) - std::begin(array1);
+	int array2[size];
+	for(size_t i = 0; i < size; i++)
+		array2[i] = *(array1 + i);
+
+	for(const auto i : array2)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+	std::vector<int> v1;
+	for(auto i = 0; i < 10; i++)
+		v1.push_back(i);
+	std::vector<int> v2(v1);
+	for(const auto i : v1)
+		std::cout << i << " ";
+	std::cout << std::endl;
+	for(const auto i : v2)
+		std::cout << i << " ";
+	std::cout << std::endl;
+}
+
 void run() {
-	run339();
-//	run341();
-//	run342();
-//	run343();
-//	run344();
-//	run345();
+//	ex331();
+//	ex332();
+//	ex334();
+//	ex335();
+//	ex336();
+//	ex339();
+//	ex340();
+//	ex341();
+//	ex342();
+//	ex343();
+//	ex344();
+//	ex345();
 }
 
 }
