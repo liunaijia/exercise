@@ -17,7 +17,7 @@ void ex341() {
 void ex342() {
 	std::cout << "[3.42]" << std::endl;
 	const std::vector<int> items{11, 23, 54, 90, 3};
-	int array[items.size()];
+	int array[5];
 	for(std::vector<int>::size_type i = 0; i < items.size(); i++)
 		array[i] = items[i];
 	for(const auto i : array)
@@ -129,7 +129,7 @@ void ex340() {
 	std::cout << "[3.40]" << std::endl;
 	char a[] = "hello";
 	char b[] = " world";
-	char c[strlen(a) + strlen(b) + 1];
+	char c[5 + 6 + 1];
 	strcpy(c, a);
 	strcat(c, b);
 	std::cout << c << std::endl;
@@ -193,9 +193,8 @@ void ex332() {
 	for(size_t i = 0; i < 10; i++)
 		array1[i] = i;
 
-	size_t size = std::end(array1) - std::begin(array1);
-	int array2[size];
-	for(size_t i = 0; i < size; i++)
+	int array2[10];
+	for(size_t i = 0; i < 10; i++)
 		array2[i] = *(array1 + i);
 
 	for(const auto i : array2)
@@ -214,7 +213,14 @@ void ex332() {
 	std::cout << std::endl;
 }
 
+constexpr int txt_size() {
+	return 123;
+}
+
 void run() {
+	std::string arr[2];
+	for(const auto i : arr)
+		std::cout << i << " ";
 //	ex331();
 //	ex332();
 //	ex334();
