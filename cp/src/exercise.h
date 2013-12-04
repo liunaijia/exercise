@@ -5,11 +5,15 @@
  *      Author: liunaijia
  */
 
-#ifndef N36_H_
-#define N36_H_
+#ifndef EXERCISE_H_
+#define EXERCISE_H_
 
 namespace chapter3 {
 void run();
 }
 
-#endif /* N36_H_ */
+namespace chapter4 {
+void run();
+}
+
+#endif /* EXERCISE_H_ */

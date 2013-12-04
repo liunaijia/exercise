@@ -1,13 +1,13 @@
 /*
  * main.cpp
  *
- *  Created on: 2013年11月5日
+ *  Created on: 2013骞�1鏈�鏃�
  *      Author: liunaijia
  */
 #include "exercise.h"
 
 int main() {
-	chapter3::run();
+	chapter4::run();
 
 	return 0;
 }
