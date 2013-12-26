@@ -1,7 +1,7 @@
 /*
  * main.cpp
  *
- *  Created on: 2013骞�1鏈�鏃�
+ *  Created on: 2013年12月3日
  *      Author: liunaijia
  */
 #include "exercise.h"
