@@ -1,25 +1,15 @@
 package hello;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
-@Configuration
 @ComponentScan
+@EnableAutoConfiguration
 public class Application {
 
-    @Bean
-    MessageService mockMessageService() {
-        return new MessageService() {
-            public String getMessage() {
-              return "Hello World!";
-            }
-        };
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 
-  public static void main(String[] args) {
-      ApplicationContext context = 
-          new AnnotationConfigApplicationContext(Application.class);
-      MessagePrinter printer = context.getBean(MessagePrinter.class);
-      printer.printMessage();
-  }
 }
