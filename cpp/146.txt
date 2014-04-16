@@ -1,0 +1,8 @@
+5
+valarray<string>
+Stack<double>
+Stack<Worker*>
+4个，分别是ArrayTP<int, 10>、ArrayTP<double, 10>、ArrayTP<int, 5>、ArrayTP<T,10>
+
+6
+虚基类的派生类只有一个基类对象拷贝，非虚基类的派生类中含有每个基类的对象拷贝。
