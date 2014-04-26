@@ -1,0 +1,22 @@
+1
+a）缺少class关键字，应为friend class clasp;
+b）需要前向声明，class muff;
+c）muff和cuff类声明顺序颠倒，并在一开始增加前向声明class muff;
+
+2
+不能，因为将产生互相依赖声明的问题。
+
+3
+没发现有什么问题，难道是Sauce类缺少无参数的构造函数？这样就无法在Ribs中定义一个Sauce类型的成员变量了。
+
+4
+return将回到函数的调用处，throw将直接跳到与抛出异常匹配的catch异常处理代码块中。
+
+5.
+先catch派生类，再catch基类，自底向上。
+
+6.
+能dynamic_cast<Superb*>的pg指针类型有Superb和Magnificent，所以第一段代码中这两个类型的对象都将调用say函数，而第二段代码，只有Superb类型的对象才调用say函数。
+
+7.
+static_cast处理范围更广：可以在类继承结构内部转换（即使在继承体系中，也不要修存在虚函数），或者不同类型之间进行转换。
