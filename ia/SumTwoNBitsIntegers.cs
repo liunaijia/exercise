@@ -13,28 +13,31 @@ namespace IA {
             var length = Math.Max(a.Length, b.Length);
             var result = new bool[length + 1];
             bool carry = false;
-            for (var bitAt = 0; bitAt < length; bitAt++) {
-                BitAdd(carry, a[bitAt], b[bitAt], out result[bitAt], out carry);
+            for (var bitAt = length - 1; bitAt >= 0; bitAt--) {
+                BitAdd(carry, a[bitAt], b[bitAt], out result[bitAt + 1], out carry);
             }
-            result[length] = carry;
+            result[0] = carry;
             return result;
         }
 
         private void BitAdd(bool x, bool y, bool z, out bool result, out bool carry) {
             var sum = Convert.ToInt32(x) + Convert.ToInt32(y) + Convert.ToInt32(z);
             result = (sum & 1) == 1;
-            carry = (sum & 2) == 1;
+            carry = (sum & 2) == 2;
+        }
+
+        private bool[] ToBoolArray(string number) {
+            return number.ToCharArray().Select(_ => _ == '1').ToArray();
         }
 
         [Test]
         public void TestSumTwoIntegers() {
-            //new BitArray
-            //var x = new[] {};
-            //var y = new[] { };
+            var x = ToBoolArray("101101");
+            var y = ToBoolArray("101101");
+            
+            var result = Sum(x, y);
 
-            //var result = Sum(x, y);
-
-            //Assert.AreEqual(ToBitArray(83123), result);
+            Assert.AreEqual(ToBoolArray("1011010"), result);
         }
     }
 }
