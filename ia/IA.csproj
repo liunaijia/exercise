@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="AlgorithmEfficiencyCompare.cs" />
     <Compile Include="CompareInsertionAndMergeSort.cs" />
+    <Compile Include="InsertionSortAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequenceFindAlgorithm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
