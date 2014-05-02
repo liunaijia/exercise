@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace IA {
-    class SequenceFindAlgorithm {
+    class SequenceFind {
         public int IndexOf<T>(IList<T> array, T value) {
             for (var i = 0; i < array.Count; i++) {
                 if (Comparer.Default.Compare(array[i], value) == 0)

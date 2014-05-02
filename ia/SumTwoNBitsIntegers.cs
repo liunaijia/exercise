@@ -12,7 +12,7 @@ namespace IA {
         public bool[] Sum(bool[] a, bool[] b) {
             var length = Math.Max(a.Length, b.Length);
             var result = new bool[length + 1];
-            bool carry = false;
+            var carry = false;
             for (var bitAt = length - 1; bitAt >= 0; bitAt--) {
                 BitAdd(carry, a[bitAt], b[bitAt], out result[bitAt + 1], out carry);
             }

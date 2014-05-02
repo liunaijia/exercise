@@ -44,9 +44,10 @@
   <ItemGroup>
     <Compile Include="AlgorithmEfficiencyCompare.cs" />
     <Compile Include="CompareInsertionAndMergeSort.cs" />
-    <Compile Include="InsertionSortAlgorithm.cs" />
+    <Compile Include="InsertionSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SequenceFindAlgorithm.cs" />
+    <Compile Include="SelectionSort.cs" />
+    <Compile Include="SequenceFind.cs" />
     <Compile Include="SumTwoNBitsIntegers.cs" />
   </ItemGroup>
   <ItemGroup>

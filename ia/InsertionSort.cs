@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace IA {
-    internal class InsertionSortAlgorithm {
+    internal class InsertionSort {
         public void Sort<T>(IList<T> array) {
             Sort(array, (x, y) => Comparer.Default.Compare(x, y));
         }
