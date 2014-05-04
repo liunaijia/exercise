@@ -44,5 +44,10 @@ namespace IA {
 
             Assert.AreEqual(new[] {10, 4, 3, 1}, numbers);
         }
+
+        [Test]
+        public void RandomTest() {
+            new SortTests().RandomTest(Sort);
+        }
     }
 }
