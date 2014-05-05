@@ -34,7 +34,7 @@ namespace IA {
             for (var i = 1; i < list.Count; i++) {
                 var key = list[i];
 
-                var insertPosition = FindInsertPosition(list, key, 0, i, comparer);
+                var insertPosition = FindInsertPosition(list, key, 0, i - 1, comparer);
 
                 for (var j = i - 1; j >= insertPosition; j--)
                     list[j + 1] = list[j];

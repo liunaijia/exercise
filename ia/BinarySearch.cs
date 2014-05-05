@@ -8,20 +8,22 @@ using NUnit.Framework;
 
 namespace IA {
     internal class BinarySearch {
-        private int IndexOf<T>(IList<T> collection, T target) {
-            return IndexOf(collection, target, 0, collection.Count);
+        public int IndexOf<T>(IList<T> collection, T target) {
+            // notice end is collection.Count - 1
+            return IndexOf(collection, 0, collection.Count - 1, target);
         }
 
-        private int IndexOf<T>(IList<T> collection, T target, int start, int end) {
+        public int IndexOf<T>(IList<T> collection, int start, int end, T target) {
             if (start > end)
                 return -1;
             var middle = (start + end) / 2;
-            
-            if (Comparer.Default.Compare(target, collection[middle]) < 0)
-                return IndexOf<T>(collection, target, start, middle - 1);
 
-            if (Comparer.Default.Compare(target, collection[middle]) > 0)
-                return IndexOf<T>(collection, target, middle + 1, end);
+            var compareResult = Comparer.Default.Compare(target, collection[middle]);
+            if (compareResult < 0)
+                return IndexOf<T>(collection, start, middle - 1, target);
+
+            if (compareResult > 0)
+                return IndexOf<T>(collection, middle + 1, end, target);
 
             return middle;
         }
@@ -45,10 +47,28 @@ namespace IA {
         }
 
         [Test]
-        public void TestNotExistsNumber() {
+        public void TestNotExistsNumber1() {
             var numbers = new[] {1, 3};
 
             var index = IndexOf(numbers, 2);
+
+            Assert.AreEqual(-1, index);
+        }
+
+        [Test]
+        public void TestNotExistsNumber2() {
+            var numbers = new[] { 1, 3 };
+
+            var index = IndexOf(numbers, 10);
+
+            Assert.AreEqual(-1, index);
+        }
+
+        [Test]
+        public void TestNotExistsNumber3() {
+            var numbers = new[] { 1, 3 };
+
+            var index = IndexOf(numbers, 0);
 
             Assert.AreEqual(-1, index);
         }

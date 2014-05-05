@@ -51,7 +51,7 @@ namespace IA {
         /// <param name="numbers">numbers to be sorted</param>
         /// <param name="start">sort from start index to end index elements in numbers</param>
         /// <param name="end"></param>
-        private void Sort<T>(IList<T> numbers, int start, int end) {
+        public void Sort<T>(IList<T> numbers, int start, int end) {
             if (end - start > 1) {
                 var middle = (start + end) / 2; // find the middle index
                 Sort(numbers, start, middle); // sort the left part
