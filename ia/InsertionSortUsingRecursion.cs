@@ -10,7 +10,7 @@ namespace IA {
     class InsertionSortUsingRecursion {
         private void Sort<T>(IList<T> numbers, int insertNumberIndex = 1) {
             if (insertNumberIndex < numbers.Count - 1)
-                Sort<T>(numbers, insertNumberIndex + 1);
+                Sort(numbers, insertNumberIndex + 1);
             // insert numbers[insertNumberIndex] into sorted numbers[0..insertNumberIndex - 1]
             var key = numbers[insertNumberIndex];
             var i = insertNumberIndex - 1;

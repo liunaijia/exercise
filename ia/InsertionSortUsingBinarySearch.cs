@@ -33,19 +33,22 @@ namespace IA {
         private void Sort<T>(IList<T> list, Func<T, T, int> comparer) {
             for (var i = 1; i < list.Count; i++) {
                 var key = list[i];
+                
 
                 var insertPosition = FindInsertPosition(list, key, 0, i - 1, comparer);
 
-                for (var j = i - 1; j >= insertPosition; j--)
-                    list[j + 1] = list[j];
+                //for (var j = i - 1; j >= insertPosition; j--)
+                //    list[j + 1] = list[j];
                 
-                list[insertPosition] = key;
+                //list[insertPosition] = key;
+                list.RemoveAt(i);
+                list.Insert(insertPosition, key);
             }
         }
 
         [Test]
         public void TestSortNumbers() {
-            var numbers = new[] {3, 4, 1, 10};
+            var numbers = new[] {3, 4, 1, 10}.ToList();
             Sort(numbers);
 
             Assert.AreEqual(new[] {1, 3, 4, 10}, numbers);
@@ -53,7 +56,7 @@ namespace IA {
 
         [Test]
         public void TestSortDescNumbers() {
-            var numbers = new[] {3, 4, 1, 10};
+            var numbers = new[] {3, 4, 1, 10}.ToList();
             SortDesc(numbers);
 
             Assert.AreEqual(new[] {10, 4, 3, 1}, numbers);
